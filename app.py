@@ -21,7 +21,8 @@ def feature_cleaner(feature_list,dataset):
    # print('Data cleaned..\nConverting to numeric type')
     dataset[features_to_float] = dataset[features_to_float].astype('float64')
     return dataset[features_to_float]
-
+  
+features_to_float = ['Unit Price','Unit Price Tax','Total Discounts','Total Owed','Shipment Item Subtotal','Shipment Item Subtotal Tax']
 data = feature_cleaner(feature_list=features_to_float,dataset=data)
 
 if st.checkbox('Show raw data'):
