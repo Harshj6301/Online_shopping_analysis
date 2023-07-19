@@ -46,6 +46,7 @@ st.subheader('Tax of the products')
 c = ['Unit Price Tax','Unit Price']
 fig4 = px.bar(data_frame=data,y='Unit Price',hover_data=['Unit Price Tax','Unit Price'],x='Product Name',opacity=0.7,color='Unit Price Tax',
        title='Products with their Price and Tax')
+fig4.update_xaxes(showticklabels=False)
 st.plotly_chart(fig4, theme='streamlit', use_container_width = True)
 
 fig5 = px.scatter(data_frame=data, x='Order Date', y='Total Owed', color='Total Owed',
