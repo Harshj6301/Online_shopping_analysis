@@ -30,10 +30,10 @@ if st.checkbox('Show raw data'):
     st.write(data)
 
 st.subheader('Pie chart for Top 10 prodcuts')
-fig1 = px.pie(data_frame=data[:10],values='Unit Price',hole=0.5)
+fig1 = px.pie(data_frame=data[:10],values='Unit Price',hole=0.5, hover_data=['Product Name'])
 st.plotly_chart(fig1, theme='streamlit', use_container_width=True)
 
 st.subheader('Pie chart for Last 20 prodcuts')
-fig2 = px.pie(data_frame=data[-19:],values='Unit Price',hole=0.5)
+fig2 = px.pie(data_frame=data[-19:],values='Unit Price',hole=0.5,hover_data=['Product Name'])
 st.plotly_chart(fig2, theme='streamlit', use_container_width = True)
 
