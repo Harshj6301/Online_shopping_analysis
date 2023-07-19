@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
+import plotly.express as px
 
 st.title("Ecommerce Data Analysis")
 
@@ -30,4 +30,5 @@ if st.checkbox('Show raw data'):
     st.write(data)
 
 st.subheader('Pie chart')
-st.plotly_chart(data_frame=data[:10],values='Price',hover_data=['Product Name'],names='shorted_names',hole=0.5)
+fig1 = px.pie(data_frame=product_price[:10],values='Price',hover_data=['Product Name'],names='shorted_names',hole=0.5)
+st.plotly_chart(fig1, theme='streamlit', use_container_width=True)
