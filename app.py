@@ -34,6 +34,7 @@ fig1 = px.pie(data_frame=data[:10],values='Unit Price',hole=0.5, hover_data=['Pr
 st.plotly_chart(fig1, theme='streamlit', use_container_width=True)
 
 st.subheader('Pie chart for Last 20 prodcuts')
-fig2 = px.pie(data_frame=data[-19:],values='Unit Price',hole=0.5,hover_data=['Product Name'])
+price_slider = st.slider('Unit Price',0,max('Unit Price'))
+fig2 = px.pie(data_frame=data[-19:],values=price_slider,hole=0.5,hover_data=['Product Name'])
 st.plotly_chart(fig2, theme='streamlit', use_container_width = True)
 
