@@ -30,5 +30,5 @@ if st.checkbox('Show raw data'):
     st.write(data)
 
 st.subheader('Pie chart')
-fig1 = px.pie(data_frame=data[:10],values='Unit Price'],hole=0.5)
+fig1 = px.pie(data_frame=data[:10],values='Unit Price',hole=0.5)
 st.plotly_chart(fig1, theme='streamlit', use_container_width=True)
