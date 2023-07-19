@@ -30,4 +30,4 @@ if st.checkbox('Show raw data'):
     st.write(data)
 
 st.subheader('Pie chart')
-np.pie(data_frame=data[:10],values='Price',hover_data=['Product Name'],names='shorted_names',hole=0.5)
+st.plotly_chart(data_frame=data[:10],values='Price',hover_data=['Product Name'],names='shorted_names',hole=0.5)
