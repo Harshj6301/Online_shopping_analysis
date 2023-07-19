@@ -43,7 +43,7 @@ fig3 = px.line(x='Order Date', y='Total Owed',data_frame=data,
 st.plotly_chart(fig3, theme='streamlit', use_container_width = True)
 
 st.subheader('Tax of the products')
-fig4 = px.bar(data_frame=data[:10],x=['Price'],hover_data=['Unit Price Tax','Unit Price'],y='Product Name',opacity=0.7,
+fig4 = px.bar(data_frame=data[:10],y='Price',hover_data=['Unit Price Tax','Unit Price'],x='Product Name',opacity=0.7,
        title='Products with their Price and Tax')
 st.plotly_chart(fig4, theme='streamlit', use_container_width = True)
 
