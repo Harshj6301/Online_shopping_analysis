@@ -56,4 +56,4 @@ st.plotly_chart(fig5, theme='streamlit', use_container_width = True)
 st.subheader('A 3d chart for more interactivity')
 fig6 = px.scatter_3d(data_frame=data, x='Order Date', z='Total Owed',y='Quantity',hover_data=['Product Name'],
                      labels={'Total Owed':'Price'},color='Quantity',width=800,height=750)
-st.plotly_chart(fig6, use_container_width = True)
+st.plotly_chart(fig6, theme=None, use_container_width = True)
