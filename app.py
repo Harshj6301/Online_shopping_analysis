@@ -12,7 +12,7 @@ def load_data(nrows):
   data['Ship Date'] = pd.to_datetime(data['Ship Date'])
   data['Order Date'] = pd.to_datetime(data['Order Date'])
   return data
-
+data = load_data()
 def feature_cleaner(feature_list,dataset):
     """The function replaces ','(comma) and '''(quote) in the entries and later converts all records into float64 """
     for feature in feature_list:
