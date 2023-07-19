@@ -7,7 +7,7 @@ st.title("Ecommerce Data Analysis")
 DATA_PATH = ("assets/Retail.OrderHistory.Clean.csv")
 
 def load_data(nrows=None):
-  data = pd.read_csv(DATA_PATH, nrows=nrows)
+  data = pd.read_csv(DATA_PATH,nrows=nrows,encoding='utf8',encoding_errors='ignore')
   data.drop(columns=['Purchase Order Number','Gift Message','Gift Sender Name','Gift Recipient Contact Details','Unnamed: 19'],inplace=True)
   data['Ship Date'] = pd.to_datetime(data['Ship Date'])
   data['Order Date'] = pd.to_datetime(data['Order Date'])
