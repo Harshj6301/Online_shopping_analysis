@@ -40,4 +40,19 @@ st.plotly_chart(fig2, theme='streamlit', use_container_width = True)
 st.subheader('Orders over time')
 fig3 = px.line(x='Order Date', y='Total Owed',data_frame=data,
        title='Orders through the time',hover_data=['Product Name'],labels={'Total Owed':'Price'},color='Quantity',line_dash_sequence=['dot'],markers=True)
-st.plotly_chart(fig3)
+st.plotly_chart(fig3, theme='streamlit', use_container_width = True)
+
+st.subheader('Tax of the products')
+fig4 = px.bar(data_frame=data[:10],x=['Price','Tax'],y='Product Name',barmode='overlay',opacity=0.7,
+       title='Products with their Price and Tax',
+       hover_data=['Product Name'])
+st.plotly_chart(fig4, theme='streamlit', use_container_width = True)
+
+fig5 = px.scatter(data_frame=data, x='Order Date', y='Total Owed', color='Total Owed',
+           labels={'Total Owed': 'Price'},hover_data=['Product Name'],size='Quantity')
+st.plotly_chart(fig5, theme='streamlit', use_container_width = True)
+
+st.subheader('A 3d chart for more interactivity')
+fig6 = px.scatter_3d(data_frame=data, x='Order Date', z='Total Owed',y='Quantity',hover_data=['Product Name'],
+                     labels={'Total Owed':'Price'},color='Quantity',width=800,height=750)
+st.plotly_chart(fig6, theme='streamlit', use_container_width = True)
