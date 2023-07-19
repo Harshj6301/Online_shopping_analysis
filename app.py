@@ -38,6 +38,6 @@ fig2 = px.pie(data_frame=data[:19],values='Unit Price',hole=0.5,hover_data=['Pro
 st.plotly_chart(fig2, theme='streamlit', use_container_width = True)
 
 st.subheader('Orders over time')
-fig3 = px.line(x='Order Date', y='Total Owed',data_frame=orders_df,
+fig3 = px.line(x='Order Date', y='Total Owed',data_frame=data,
        title='Orders through the time',hover_data=['Product Name'],labels={'Total Owed':'Price'},color='Quantity',line_dash_sequence=['dot'],markers=True)
 st.plotly_chart(fig3)
