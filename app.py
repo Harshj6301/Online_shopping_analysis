@@ -23,12 +23,17 @@ def feature_cleaner(feature_list,dataset):
     return dataset[features_to_float]
   
 features_to_float = ['Unit Price','Unit Price Tax','Total Discounts','Total Owed','Shipment Item Subtotal','Shipment Item Subtotal Tax']
-data = feature_cleaner(feature_list=features_to_float,dataset=data)
+data1 = feature_cleaner(feature_list=features_to_float,dataset=data)
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
 
-st.subheader('Pie chart')
+st.subheader('Pie chart for Top 10 prodcuts')
 fig1 = px.pie(data_frame=data[:10],values='Unit Price',hole=0.5)
 st.plotly_chart(fig1, theme='streamlit', use_container_width=True)
+
+st.subheader('Pie chart for Last 20 prodcuts')
+fig2 = px.pie(data_frame=data[-19:],values='Unit Price',hole=0.5)
+st.plotly_chart(fig2, theme='streamlit', use_container_width = True)
+
